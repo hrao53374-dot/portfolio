@@ -117,7 +117,7 @@ export default function Hero() {
           className="max-w-3xl"
         >
           <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-teal-700/30 bg-teal-50 px-3 py-1 text-xs font-semibold tracking-wide text-teal-800 sm:text-sm">
-            ● Available for WordPress &amp; automation work
+            ● Available for websites, web apps &amp; automation work
           </p>
           <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight text-zinc-900 sm:text-6xl lg:text-7xl">
             {person.name}

@@ -7,12 +7,12 @@
 export const person = {
   name: "Hassaan Sikandar",
   fullName: "M. Hassaan Sikandar",
-  title: "WordPress Developer & AI Workflow Automation Specialist",
-  shortTitle: "WordPress Developer & Automation Specialist",
+  title: "I build websites, web apps & AI automations that help businesses work smarter and scale faster | WordPress • Custom Tools • AI Agents • Workflow Automation",
+  shortTitle: "Websites, Web Apps & AI Automation",
   location: "Multan, Punjab, Pakistan",
   linkedin: "https://www.linkedin.com/in/hassaan-sikandar",
   tagline:
-    "Hi, I'm Hassaan — I build WordPress websites and smart little workflows that quietly take the boring, repetitive work off your plate.",
+    "Hi, I'm Hassaan — I build websites, web apps and smart automations that quietly take the boring, repetitive work off your plate.",
   about:
     "I'm a WordPress developer based in Multan, and I like building things that actually help a business day to day. That usually means a fast, easy-to-manage website, a custom tool that does one job really well, or an automation that handles the follow-ups and admin nobody enjoys. I've been doing this since 2022, mostly for startups and small businesses, and I care a lot more about whether something works for you than whether it just looks good.",
 };
