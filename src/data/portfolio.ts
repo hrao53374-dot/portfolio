@@ -12,44 +12,44 @@ export const person = {
   location: "Multan, Punjab, Pakistan",
   linkedin: "https://www.linkedin.com/in/hassaan-sikandar",
   tagline:
-    "I build WordPress websites, custom web tools, and AI workflows that save businesses time — not just pages that look good.",
+    "Hi, I'm Hassaan — I build WordPress websites and smart little workflows that quietly take the boring, repetitive work off your plate.",
   about:
-    "Hassaan builds websites, web applications, and automation workflows for startups and small businesses. His work combines WordPress development with custom tools and integrations that reduce repetitive administration. He focuses on REST API integrations, performance optimization, and practical business automation — so a website does real work, not just sit online.",
+    "I'm a WordPress developer based in Multan, and I like building things that actually help a business day to day. That usually means a fast, easy-to-manage website, a custom tool that does one job really well, or an automation that handles the follow-ups and admin nobody enjoys. I've been doing this since 2022, mostly for startups and small businesses, and I care a lot more about whether something works for you than whether it just looks good.",
 };
 
 export const services = [
   {
     title: "WordPress & Business Websites",
     description:
-      "Professional business websites, landing pages and custom WordPress builds for startups and small businesses — fast, responsive and easy to manage.",
+      "A proper website for your business — clear, fast, and easy for you to update yourself. No jargon, no fuss, just a site that does its job.",
     icon: "🌐",
     tags: ["WordPress", "Business Websites", "Landing Pages"],
   },
   {
     title: "Responsive Elementor & E-Commerce",
     description:
-      "Responsive Elementor designs and e-commerce interfaces that look great and convert on phone, tablet and desktop.",
+      "Online shops and pages that feel just as good on a phone as they do on a laptop — and make it easy for customers to actually buy.",
     icon: "🛒",
     tags: ["Elementor Pro", "E-Commerce", "Responsive Design"],
   },
   {
     title: "Custom Plugins & Web Tools",
     description:
-      "Custom plugins, pricing calculators, search filters and membership features — the specific tools a business needs, built into WordPress.",
+      "Need something specific, like a pricing calculator, a search filter, or a members area? I'll build it into WordPress so it fits the way you work.",
     icon: "🧩",
     tags: ["Custom Plugins", "Pricing Calculators", "Membership"],
   },
   {
     title: "AI Agents & Workflow Automation",
     description:
-      "AI agents and workflow automation for follow-ups, reporting and CRM updates — cutting repetitive admin so teams can focus on customers.",
+      "Little AI helpers and automations that handle follow-ups, reports, and CRM updates in the background — so your team can get on with real work.",
     icon: "🤖",
     tags: ["AI Agents", "Workflow Automation", "CRM Updates"],
   },
   {
     title: "API Integrations & Performance",
     description:
-      "REST API integrations and website performance optimization — connecting WordPress to external tools and making sites load fast.",
+      "Connecting WordPress to the tools you already use, and making your site load properly fast. If it feels slow, we'll fix that.",
     icon: "⚡",
     tags: ["REST APIs", "Speed Optimization", "Integrations"],
   },
@@ -81,9 +81,9 @@ export const experience = [
     period: "August 2022 — Present",
     location: "Multan, Punjab, Pakistan",
     points: [
-      "Built websites and automation workflows for education, e-commerce, and service businesses.",
-      "Developed the HowToSelfHost resource and integrated WordPress with external tools.",
-      "Optimized website performance and built custom plugins.",
+      "Built websites and automations for education, e-commerce, and service businesses — the kind of sites that need to work every day, not just launch day.",
+      "Put together HowToSelfHost, and hooked WordPress up to the outside tools clients were already using.",
+      "Made sites faster and built custom plugins when the off-the-shelf options didn't quite fit.",
     ],
   },
 ];
@@ -98,42 +98,42 @@ export const projects = [
   {
     title: "HowToSelfHost",
     description:
-      "A self-hosting resource built at HashTurn — practical guides and tooling to help people run their own services, with WordPress integration and performance-focused delivery.",
+      "A hands-on guide to running your own services, built at HashTurn. Practical, plain-language help with WordPress behind it and speed kept front of mind.",
     tags: ["WordPress", "Web Resource", "Performance"],
     highlight: "Built at HashTurn",
   },
   {
     title: "Business Websites for Startups",
     description:
-      "Professional business websites for startups and small businesses — custom WordPress builds with clear structure, SEO basics and fast loading.",
+      "Websites for startups and small businesses that say what you do, clearly, and load quickly. Custom WordPress builds with the SEO basics covered.",
     tags: ["WordPress", "Business Websites", "SEO"],
     highlight: "Startups & small business",
   },
   {
     title: "E-Commerce Interfaces",
     description:
-      "Responsive e-commerce interfaces with Elementor — product pages, checkout flows and store layouts designed to work smoothly on mobile.",
+      "Shop pages and checkouts built with Elementor that work smoothly on mobile — because that's where most customers actually are.",
     tags: ["Elementor Pro", "E-Commerce", "Responsive"],
     highlight: "Mobile-first",
   },
   {
     title: "Custom Plugins & Calculators",
     description:
-      "Custom WordPress plugins including pricing calculators, search filters and membership features — tailored tools, not off-the-shelf compromises.",
+      "Plugins built for one job — pricing calculators, search filters, membership features. Tailored to the business, not squeezed into something generic.",
     tags: ["PHP", "Custom Plugins", "JavaScript"],
     highlight: "Custom tools",
   },
   {
     title: "AI Workflow Automation",
     description:
-      "AI agents and automated workflows for follow-ups, reporting and CRM updates, with REST API integrations connecting websites to the tools businesses already use.",
+      "AI agents and workflows that look after follow-ups, reporting, and CRM updates, linked up with the tools a business already relies on.",
     tags: ["AI Agents", "REST APIs", "Automation"],
     highlight: "Automation",
   },
   {
     title: "Performance & Speed Optimization",
     description:
-      "Website performance optimization — faster load times, cleaner delivery and better experience for visitors and search engines alike.",
+      "Making slow sites fast again — quicker loading, cleaner delivery, and a better experience for visitors and for search engines.",
     tags: ["Speed Optimization", "SEO", "WordPress"],
     highlight: "Performance",
   },
