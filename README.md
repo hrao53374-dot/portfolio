@@ -6,8 +6,8 @@ Developer & AI Workflow Automation Specialist, Multan, Punjab, Pakistan.
 - LinkedIn: https://www.linkedin.com/in/hassaan-sikandar
 - Current role: WordPress Developer & Automation Specialist at HashTurn
   (August 2022 — Present)
-- Education: Bahauddin Zakariya University, Bachelor of Information
-  Technology (September 2022 — September 2026, in progress)
+- Education: Riphah International University, Bachelor of Information
+  Technology (September 2022 — September 2026)
 
 ## Stack
 

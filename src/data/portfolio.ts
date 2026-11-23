@@ -89,9 +89,9 @@ export const experience = [
 ];
 
 export const education = {
-  school: "Bahauddin Zakariya University",
+  school: "Riphah International University",
   degree: "Bachelor of Information Technology",
-  period: "September 2022 — September 2026 (in progress)",
+  period: "September 2022 — September 2026",
 };
 
 export const projects = [
