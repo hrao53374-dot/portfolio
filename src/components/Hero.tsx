@@ -4,18 +4,20 @@ import { Suspense, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshDistortMaterial } from "@react-three/drei";
+import { Float } from "@react-three/drei";
 import * as THREE from "three";
 import { person } from "@/data/portfolio";
 
 /**
  * Interactive 3D scene — no external models, so it loads fast
  * and works offline. Light theme: teal shapes on a light grey
- * canvas. The torus knot reacts to the mouse, and the particle
- * field slowly rotates. Move your pointer over the hero to see it respond.
+ * canvas. A tech CPU chip with circuit pins and orbiting data
+ * nodes reacts to the mouse, and the particle field slowly
+ * rotates. Move your pointer over the hero to see it respond.
  */
 function Scene() {
-  const knotRef = useRef<THREE.Mesh>(null);
+  const chipRef = useRef<THREE.Group>(null);
+  const orbitRef = useRef<THREE.Group>(null);
   const particlesRef = useRef<THREE.Points>(null);
 
   const particlePositions = useMemo(() => {
@@ -27,13 +29,20 @@ function Scene() {
     return arr;
   }, []);
 
+  // Circuit pins along the four edges of the chip.
+  const pinOffsets = [-0.6, -0.2, 0.2, 0.6];
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
-    if (knotRef.current) {
-      knotRef.current.rotation.x = t * 0.25;
-      knotRef.current.rotation.y = t * 0.35;
-      knotRef.current.rotation.z = state.pointer.x * 0.3;
-      knotRef.current.position.y = Math.sin(t * 0.8) * 0.15;
+    if (chipRef.current) {
+      chipRef.current.rotation.y = t * 0.35;
+      chipRef.current.rotation.x = 0.35 + state.pointer.y * 0.15;
+      chipRef.current.rotation.z = state.pointer.x * 0.15;
+      chipRef.current.position.y = Math.sin(t * 0.8) * 0.15;
+    }
+    if (orbitRef.current) {
+      orbitRef.current.rotation.y = -t * 0.5;
+      orbitRef.current.rotation.x = 0.4;
     }
     if (particlesRef.current) {
       particlesRef.current.rotation.y = t * 0.03;
@@ -55,22 +64,82 @@ function Scene() {
       </points>
 
       <Float speed={1.5} rotationIntensity={0.6} floatIntensity={0.8}>
-        <mesh ref={knotRef} position={[0, 0, 0]}>
-          <torusKnotGeometry args={[0.9, 0.28, 160, 32]} />
-          <MeshDistortMaterial color="#0f766e" distort={0.25} speed={2} metalness={0.2} roughness={0.4} />
-        </mesh>
+        <group ref={chipRef} position={[0, 0, 0]}>
+          {/* CPU chip body */}
+          <mesh>
+            <boxGeometry args={[1.7, 0.22, 1.7]} />
+            <meshStandardMaterial color="#0f766e" metalness={0.3} roughness={0.35} />
+          </mesh>
+          {/* Chip die */}
+          <mesh position={[0, 0.16, 0]}>
+            <boxGeometry args={[1.0, 0.12, 1.0]} />
+            <meshStandardMaterial color="#115e59" metalness={0.4} roughness={0.3} />
+          </mesh>
+          {/* Core */}
+          <mesh position={[0, 0.24, 0]}>
+            <boxGeometry args={[0.55, 0.08, 0.55]} />
+            <meshStandardMaterial color="#0284c7" metalness={0.3} roughness={0.3} />
+          </mesh>
+          {/* Circuit pins — front / back */}
+          {pinOffsets.map((x) => (
+            <mesh key={`pin-f-${x}`} position={[x, 0, 1.02]}>
+              <boxGeometry args={[0.18, 0.08, 0.35]} />
+              <meshStandardMaterial color="#475569" metalness={0.6} roughness={0.3} />
+            </mesh>
+          ))}
+          {pinOffsets.map((x) => (
+            <mesh key={`pin-b-${x}`} position={[x, 0, -1.02]}>
+              <boxGeometry args={[0.18, 0.08, 0.35]} />
+              <meshStandardMaterial color="#475569" metalness={0.6} roughness={0.3} />
+            </mesh>
+          ))}
+          {/* Circuit pins — left / right */}
+          {pinOffsets.map((z) => (
+            <mesh key={`pin-l-${z}`} position={[-1.02, 0, z]}>
+              <boxGeometry args={[0.35, 0.08, 0.18]} />
+              <meshStandardMaterial color="#475569" metalness={0.6} roughness={0.3} />
+            </mesh>
+          ))}
+          {pinOffsets.map((z) => (
+            <mesh key={`pin-r-${z}`} position={[1.02, 0, z]}>
+              <boxGeometry args={[0.35, 0.08, 0.18]} />
+              <meshStandardMaterial color="#475569" metalness={0.6} roughness={0.3} />
+            </mesh>
+          ))}
+          {/* Orbit ring around the chip */}
+          <mesh rotation={[Math.PI / 2.4, 0, 0]}>
+            <torusGeometry args={[1.9, 0.03, 16, 100]} />
+            <meshStandardMaterial color="#0f766e" transparent opacity={0.5} />
+          </mesh>
+        </group>
       </Float>
+
+      {/* Orbiting data nodes — AI / automation network */}
+      <group ref={orbitRef}>
+        <mesh position={[2.1, 0.6, 0]}>
+          <sphereGeometry args={[0.14, 24, 24]} />
+          <meshStandardMaterial color="#0284c7" metalness={0.3} roughness={0.3} />
+        </mesh>
+        <mesh position={[-1.8, -0.7, 0.9]}>
+          <sphereGeometry args={[0.11, 24, 24]} />
+          <meshStandardMaterial color="#0f766e" metalness={0.3} roughness={0.3} />
+        </mesh>
+        <mesh position={[0.4, 1.0, -1.9]}>
+          <sphereGeometry args={[0.09, 24, 24]} />
+          <meshStandardMaterial color="#475569" metalness={0.4} roughness={0.3} />
+        </mesh>
+      </group>
 
       <Float speed={2} rotationIntensity={1} floatIntensity={1.2}>
         <mesh position={[-2.6, 1.2, -1]}>
-          <icosahedronGeometry args={[0.45, 0]} />
+          <boxGeometry args={[0.6, 0.45, 0.08]} />
           <meshStandardMaterial color="#0284c7" wireframe />
         </mesh>
       </Float>
 
       <Float speed={1.2} rotationIntensity={1} floatIntensity={1}>
         <mesh position={[2.7, -1.1, -0.5]}>
-          <octahedronGeometry args={[0.5, 0]} />
+          <sphereGeometry args={[0.32, 24, 24]} />
           <meshStandardMaterial color="#475569" wireframe />
         </mesh>
       </Float>
@@ -156,7 +225,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-8 text-xs tracking-wide text-zinc-500">
-            Move your mouse over the 3D shapes — they react. This page adapts to phone, tablet &amp; desktop.
+            Move your mouse over the 3D chip — it reacts. This page adapts to phone, tablet &amp; desktop.
           </p>
         </motion.div>
       </div>
